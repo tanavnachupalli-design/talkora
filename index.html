@@ -3,355 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Talkore - Talk to Someone</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .section { display: none; padding: 20px; background: white; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .active { display: block; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #0056b3; }
+        input { padding: 10px; margin: 10px 0; width: 100%; box-sizing: border-box; }
+        .pricing { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .plan { border: 1px solid #ddd; padding: 20px; margin: 10px; text-align: center; width: 200px; }
+        .disclaimer { background: #fff3cd; padding: 10px; border: 1px solid #ffeaa7; margin: 20px 0; }
+        .rating { margin-top: 20px; }
+        .rating button { margin: 0 5px; }
+    </style>
 </head>
-<body class="login-page">
+<body>
     <div class="container">
-        <h1>Welcome to Talkora</h1>
-        <form id="loginForm">
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" required>
-            
-            <button type="submit" class="btn">Login</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="dashboard-page">
-    <header>
-        <h1>Dashboard</h1>
-        <button id="bookMockBtn" class="btn top-right">Book Your Mock</button>
-    </header>
-    <div class="container">
-        <div class="card">
-            <h2 id="greeting">Hello, User!</h2>
-            <p id="userDetails">Your details will appear here.</p>
+        <h1>Talkore - A Safe Space to Talk</h1>
+
+        <!-- Login Section -->
+        <div id="login" class="section active">
+            <h2>Login</h2>
+            <input type="text" id="loginInput" placeholder="Enter Email or Phone Number">
+            <button onclick="login()">Login</button>
         </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Booking</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="booking-page">
-    <div class="container">
-        <h1>Book Your Mock Session</h1>
-        <div class="options">
-            <div class="card option" data-amount="99">
-                <h3>₹99</h3>
-                <p>15 minutes</p>
-            </div>
-            <div class="card option" data-amount="149">
-                <h3>₹149</h3>
-                <p>30 minutes</p>
-            </div>
-            <div class="card option" data-amount="199">
-                <h3>₹199</h3>
-                <p>45 minutes</p>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Payment</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="payment-page">
-    <div class="container">
-        <h1>Complete Your Payment</h1>
-        <div class="card">
-            <p>Scan or use this number for payment:</p>
-            <div class="qr-placeholder">
-                <p class="payment-number">8125022563</p>
-                <!-- Placeholder for QR code; replace with actual image if needed -->
-                <img src="https://via.placeholder.com/200x200?text=QR+Code" alt="QR Code" class="qr-code">
-            </div>
-        </div>
-        <button id="doneBtn" class="btn bottom-right">Done</button>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Confirmation</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="confirmation-page">
-    <div class="container">
-        <h1>Confirm Your Payment</h1>
-        <form id="confirmationForm">
-            <label for="screenshot">Upload Screenshot of Payment:</label>
-            <input type="file" id="screenshot" accept="image/*" required>
-            
-            <label for="meetingLink">Google Meeting Link or Phone Number:</label>
-            <input type="text" id="meetingLink" required>
-            
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="section">
+            <h2>Welcome to Your Dashboard</h2>
+            <p>User: <span id="userInfo"></span></p>
             <div class="disclaimer">
-                <h3>Disclaimer:</h3>
-                <p>No cheating, sharing, or recording calls. You can completely trust our service. If you behave badly or use abusive language, the call ends and you will not be contacted again.</p>
+                <strong>Disclaimer:</strong> All conversations with me or my team are strictly confidential. Nothing shared will ever be disclosed outside this platform. Trust us to listen without judgment.
             </div>
-            
-            <button type="submit" class="btn">Submit</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Thank You</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="thank-you-page">
-    <div class="container">
-        <div class="thank-you-message">
-            THANK YOU MY AGENT WILL CONTACT YOU SOON
+            <h3>Payment History</h3>
+            <ul id="paymentHistory">
+                <!-- Mocked history; in real app, fetch from backend -->
+                <li>No payments yet.</li>
+            </ul>
+            <h3>Select Counselor</h3>
+            <select id="counselorGender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <button onclick="showPricing()">View Pricing & Book Call</button>
         </div>
-        <button id="returnBtn" class="btn">Return to Dashboard</button>
+
+        <!-- Pricing Section -->
+        <div id="pricing" class="section">
+            <h2>Pricing Plans</h2>
+            <div class="pricing">
+                <div class="plan">
+                    <h3>20 Minutes</h3>
+                    <p>₹99</p>
+                    <button onclick="selectPlan(20, 99)">Select</button>
+                </div>
+                <div class="plan">
+                    <h3>30 Minutes</h3>
+                    <p>₹150</p>
+                    <button onclick="selectPlan(30, 150)">Select</button>
+                </div>
+                <div class="plan">
+                    <h3>45 Minutes</h3>
+                    <p>₹220</p>
+                    <button onclick="selectPlan(45, 220)">Select</button>
+                </div>
+            </div>
+            <button onclick="showDashboard()">Back to Dashboard</button>
+        </div>
+
+        <!-- Payment Section -->
+        <div id="payment" class="section">
+            <h2>Payment</h2>
+            <p>Selected Plan: <span id="selectedPlan"></span></p>
+            <p>Amount: ₹<span id="selectedAmount"></span></p>
+            <button onclick="processPayment()">Pay Now (Mock)</button>
+            <button onclick="showPricing()">Back to Pricing</button>
+        </div>
+
+        <!-- Call Section -->
+        <div id="call" class="section">
+            <h2>Call in Progress</h2>
+            <p>Connecting to <span id="callCounselor"></span> counselor...</p>
+            <p>(In a real app, you'd initiate the call manually via phone/Zoom/WhatsApp. This is simulated.)</p>
+            <button onclick="endCall()">End Call</button>
+            <div class="rating" id="ratingSection" style="display: none;">
+                <h3>Rate Your Call</h3>
+                <button onclick="rateCall(1)">1 Star</button>
+                <button onclick="rateCall(2)">2 Stars</button>
+                <button onclick="rateCall(3)">3 Stars</button>
+                <button onclick="rateCall(4)">4 Stars</button>
+                <button onclick="rateCall(5)">5 Stars</button>
+                <p id="ratingMessage"></p>
+                <button onclick="showDashboard()">Back to Dashboard</button>
+            </div>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        let currentUser = '';
+        let selectedDuration = 0;
+        let selectedPrice = 0;
+        let paymentHistory = [];
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function login() {
+            const input = document.getElementById('loginInput').value;
+            if (input) {
+                currentUser = input;
+                document.getElementById('userInfo').textContent = currentUser;
+                showSection('dashboard');
+            } else {
+                alert('Please enter email or phone number.');
+            }
+        }
+
+        function showDashboard() { showSection('dashboard'); }
+        function showPricing() { showSection('pricing'); }
+
+        function selectPlan(duration, price) {
+            selectedDuration = duration;
+            selectedPrice = price;
+            document.getElementById('selectedPlan').textContent = `${duration} Minutes`;
+            document.getElementById('selectedAmount').textContent = price;
+            showSection('payment');
+        }
+
+        function processPayment() {
+            // Mock payment - in real app, integrate Stripe/PayPal
+            alert(`Payment of ₹${selectedPrice} processed successfully!`);
+            paymentHistory.push(`${selectedDuration} mins - ₹${selectedPrice} - ${new Date().toLocaleString()}`);
+            updatePaymentHistory();
+            showSection('call');
+            document.getElementById('callCounselor').textContent = document.getElementById('counselorGender').value;
+        }
+
+        function updatePaymentHistory() {
+            const list = document.getElementById('paymentHistory');
+            list.innerHTML = paymentHistory.map(item => `<li>${item}</li>`).join('');
+        }
+
+        function endCall() {
+            document.getElementById('ratingSection').style.display = 'block';
+        }
+
+        function rateCall(stars) {
+            document.getElementById('ratingMessage').textContent = `Thank you for rating ${stars} stars!`;
+        }
+    </script>
 </body>
 </html>
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: #333;
-    animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.container {
-    max-width: 600px;
-    width: 90%;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.card {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.btn {
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-    background: linear-gradient(135deg, #4ecdc4, #ff6b6b);
-    transform: translateY(-2px);
-}
-
-.top-right {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.bottom-right {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-}
-
-/* Page-Specific Styles */
-.login-page .container {
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
-}
-
-.dashboard-page header {
-    position: relative;
-    width: 100%;
-    text-align: center;
-}
-
-.booking-page .options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.booking-page .option {
-    width: 30%;
-    min-width: 150px;
-    cursor: pointer;
-}
-
-.payment-page .qr-placeholder {
-    margin: 20px 0;
-}
-
-.payment-page .qr-code {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-}
-
-.confirmation-page .disclaimer {
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 20px 0;
-    color: #333;
-}
-
-.thank-you-page {
-    background: red;
-    color: white;
-}
-
-.thank-you-page .thank-you-message {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
-    .booking-page .options {
-        flex-direction: column;
-        align-items: center;
-    }
-    .booking-page .option {
-        width: 80%;
-        margin-bottom: 10px;
-    }
-    .btn {
-        width: 100%;
-        padding: 15px;
-    }
-}
-// Utility: Redirect function
-function redirectTo(page) {
-    window.location.href = page;
-}
-
-// Login Page Logic
-if (document.getElementById('loginForm')) {
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        if (email && phone) {
-            localStorage.setItem('userEmail', email);
-            localStorage.setItem('userPhone', phone);
-            redirectTo('dashboard.html');
-        }
-    });
-}
-
-// Dashboard Page Logic
-if (document.getElementById('bookMockBtn')) {
-    const email = localStorage.getItem('userEmail');
-    const phone = localStorage.getItem('userPhone');
-    document.getElementById('greeting').textContent = `Hello, ${email.split('@')[0]}!`;
-    document.getElementById('userDetails').textContent = `Email: ${email}, Phone: ${phone}`;
-    document.getElementById('bookMockBtn').addEventListener('click', () => redirectTo('booking.html'));
-}
-
-// Booking Page Logic
-if (document.querySelector('.options')) {
-    document.querySelectorAll('.option').forEach(option => {
-        option.addEventListener('click', () => {
-            localStorage.setItem('selectedAmount', option.dataset.amount);
-            redirectTo('payment.html');
-        });
-    });
-}
-
-// Payment Page Logic
-if (document.getElementById('doneBtn')) {
-    document.getElementById('doneBtn').addEventListener('click', () => redirectTo('confirmation.html'));
-}
-
-// Confirmation Page Logic
-if (document.getElementById('confirmationForm')) {
-    document.getElementById('confirmationForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const screenshot = document.getElementById('screenshot').files[0];
-        const meetingLink = document.getElementById('meetingLink').value;
-        if (screenshot && meetingLink) {
-            // Simulate saving
-            localStorage.setItem('screenshot', screenshot.name);
-            localStorage.setItem('meetingLink', meetingLink);
-            redirectTo('thank-you.html');
-        } else {
-            alert('Please fill all fields.');
-        }
-    });
-}
-
-// Thank You Page Logic
-if (document.getElementById('returnBtn')) {
-    document.getElementById('returnBtn').addEventListener('click', () => redirectTo('dashboard.html'));
-}
