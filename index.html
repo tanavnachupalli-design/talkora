@@ -1,73 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Login</title>
-    <link rel="stylesheet" href="styles.css">
-</head><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Verify OTP</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>Talkora</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #111;
+      color: white;
+      padding: 50px;
+    }
+    button {
+      padding: 12px 25px;
+      background: gold;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="section active">
-            <h1>Verify OTP</h1>
-            <p>Enter the 6-digit code sent to <span id="otpPhone"></span></p>
-            <input type="text" id="otpInput" placeholder="Enter OTP">
-            <button onclick="verifyOTP()">Verify</button>
-            <button onclick="window.location.href='login.html'">Back</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
-    <script>
-        document.getElementById('otpPhone').textContent = localStorage.getItem('phone') || '';
-    </script>
+  <h1>Welcome to Talkora</h1>
+  <p>Talk to someone when you feel bored or lonely.</p>
+  <button>Login with Phone</button>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <div class="section active">
-            <header>
-                <h1>Dashboard</h1>
-                <button class="book-btn" onclick="window.location.href='booking.html'">Book Your Mock</button>
-            </header>
-            <div class="user-info">
-                <p>Welcome, <span id="userPhone"></span>!</p>
-                <p>Your safe space awaits.</p>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-    <script>
-        document.getElementById('userPhone').textContent = localStorage.getItem('phone') || '';
-    </script>
-</body>
-</html>
-
-<body>
-    <div class="container">
-        <div class="section active">
-            <h1>Welcome to Talkora</h1>
-            <p>A safe space to talk and feel better.</p>
-            <input type="tel" id="phoneInput" placeholder="Enter Your Phone Number (e.g., +91XXXXXXXXXX)">
-            <button onclick="sendOTP()">Send OTP</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-
