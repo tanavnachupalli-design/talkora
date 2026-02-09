@@ -1,27 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Talkora</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #111;
-      color: white;
-      padding: 50px;
-    }
-    button {
-      padding: 12px 25px;
-      background: gold;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talkore - Talk to Someone</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .section { display: none; padding: 20px; background: white; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .active { display: block; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #0056b3; }
+        input { padding: 10px; margin: 10px 0; width: 100%; box-sizing: border-box; }
+        .pricing { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .plan { border: 1px solid #ddd; padding: 20px; margin: 10px; text-align: center; width: 200px; }
+        .disclaimer { background: #fff3cd; padding: 10px; border: 1px solid #ffeaa7; margin: 20px 0; }
+        .rating { margin-top: 20px; }
+        .rating button { margin: 0 5px; }
+    </style>
 </head>
 <body>
-  <h1>Welcome to Talkora</h1>
-  <p>Talk to someone when you feel bored or lonely.</p>
-  <button>Login with Phone</button>
+    <div class="container">
+        <h1>Talkore - A Safe Space to Talk</h1>
+
+        <!-- Login Section -->
+        <div id="login" class="section active">
+            <h2>Login</h2>
+            <input type="text" id="loginInput" placeholder="Enter Email or Phone Number">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="section">
+            <h2>Welcome to Your Dashboard</h2>
+            <p>User: <span id="userInfo"></span></p>
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> All conversations with me or my team are strictly confidential. Nothing shared will ever be disclosed outside this platform. Trust us to listen without judgment.
+            </div>
+            <h3>Payment History</h3>
+            <ul id="paymentHistory">
+                <!-- Mocked history; in real app, fetch from backend -->
+                <li>No payments yet.</li>
+            </ul>
+            <h3>Select Counselor</h3>
+            <select id="counselorGender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <button onclick="showPricing()">View Pricing & Book Call</button>
+        </div>
+
+        <!-- Pricing Section -->
+        <div id="pricing" class="section">
+            <h2>Pricing Plans</h2>
+            <div class="pricing">
+                <div class="plan">
+                    <h3>20 Minutes</h3>
+                    <p>₹99</p>
+                    <button onclick="selectPlan(20, 99)">Select</button>
+                </div>
+                <div class="plan">
+                    <h3>30 Minutes</h3>
+                    <p>₹150</p>
+                    <button onclick="selectPlan(30, 150)">Select</button>
+                </div>
+                <div class="plan">
+                    <h3>45 Minutes</h3>
+                    <p>₹220</p>
+                    <button onclick="selectPlan(45, 220)">Select</button>
+                </div>
+            </div>
+            <button onclick="showDashboard()">Back to Dashboard</button>
+        </div>
+
+        <!-- Payment Section -->
+        <div id="payment" class="section">
+            <h2>Payment</h2>
+            <p>Selected Plan: <span id="selectedPlan"></span></p>
+            <p>Amount: ₹<span id="selectedAmount"></span></p>
+            <button onclick="processPayment()">Pay Now (Mock)</button>
+            <button onclick="showPricing()">Back to Pricing</button>
+        </div>
+
+        <!-- Call Section -->
+        <div id="call" class="section">
+            <h2>Call in Progress</h2>
+            <p>Connecting to <span id="callCounselor"></span> counselor...</p>
+            <p>(In a real app, you'd initiate the call manually via phone/Zoom/WhatsApp. This is simulated.)</p>
+            <button onclick="endCall()">End Call</button>
+            <div class="rating" id="ratingSection" style="display: none;">
+                <h3>Rate Your Call</h3>
+                <button onclick="rateCall(1)">1 Star</button>
+                <button onclick="rateCall(2)">2 Stars</button>
+                <button onclick="rateCall(3)">3 Stars</button>
+                <button onclick="rateCall(4)">4 Stars</button>
+                <button onclick="rateCall(5)">5 Stars</button>
+                <p id="ratingMessage"></p>
+                <button onclick="showDashboard()">Back to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = '';
+        let selectedDuration = 0;
+        let selectedPrice = 0;
+        let paymentHistory = [];
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function login() {
+            const input = document.getElementById('loginInput').value;
+            if (input) {
+                currentUser = input;
+                document.getElementById('userInfo').textContent = currentUser;
+                showSection('dashboard');
+            } else {
+                alert('Please enter email or phone number.');
+            }
+        }
+
+        function showDashboard() { showSection('dashboard'); }
+        function showPricing() { showSection('pricing'); }
+
+        function selectPlan(duration, price) {
+            selectedDuration = duration;
+            selectedPrice = price;
+            document.getElementById('selectedPlan').textContent = `${duration} Minutes`;
+            document.getElementById('selectedAmount').textContent = price;
+            showSection('payment');
+        }
+
+        function processPayment() {
+            // Mock payment - in real app, integrate Stripe/PayPal
+            alert(`Payment of ₹${selectedPrice} processed successfully!`);
+            paymentHistory.push(`${selectedDuration} mins - ₹${selectedPrice} - ${new Date().toLocaleString()}`);
+            updatePaymentHistory();
+            showSection('call');
+            document.getElementById('callCounselor').textContent = document.getElementById('counselorGender').value;
+        }
+
+        function updatePaymentHistory() {
+            const list = document.getElementById('paymentHistory');
+            list.innerHTML = paymentHistory.map(item => `<li>${item}</li>`).join('');
+        }
+
+        function endCall() {
+            document.getElementById('ratingSection').style.display = 'block';
+        }
+
+        function rateCall(stars) {
+            document.getElementById('ratingMessage').textContent = `Thank you for rating ${stars} stars!`;
+        }
+    </script>
 </body>
 </html>
