@@ -1,54 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <title>Talkora - Login</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home-page">
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h2>Talkora</h2>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="booking.html">Booking</a></li>
-            <li><a href="payment.html">Payment</a></li>
-            <li><a href="confirmation.html">Confirmation</a></li>
-            <li><a href="thankyou.html">Thank You</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>Contact: talkoracall@gmail.com</p>
-        </div>
-    </nav>
-    <main class="content">
-        <section class="hero">
-            <h1>Welcome to Talkora</h1>
-            <p>Your ultimate booking platform for mock calls.</p>
-            <button class="cta-btn" onclick="redirectTo('dashboard.html')">Book Now</button>
-        </section>
-        <section class="stats">
-            <div class="stat-card">
-                <h3>1.2K</h3>
-                <p>Active Users</p>
-            </div>
-            <div class="stat-card">
-                <h3>₹56K</h3>
-                <p>Revenue Generated</p>
-            </div>
-            <div class="stat-card">
-                <h3>890</h3>
-                <p>Orders Completed</p>
-            </div>
-            <div class="stat-card">
-                <h3>99%</h3>
-                <p>Satisfaction Rate</p>
-            </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+<body class="gradient-bg">
+  <div class="card">
+    <h1>Talkora</h1>
+    <p>Login to continue</p>
+
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone Number" required>
+
+    <a href="dashboard.html">
+      <button class="primary-btn">Login</button>
+    </a>
+  </div>
 </body>
 </html>
