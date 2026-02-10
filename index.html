@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Talkora - Login</title>
-  <link rel="stylesheet" href="styles.css">
+    <title>Modern Dashboard</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Arial;background:#1a1a2e;color:white}
+        .sidebar{width:250px;height:100vh;background:#16213e;position:fixed}
+        .sidebar h2{padding:20px;color:#00d4ff}
+        .nav a{display:block;padding:15px;color:#ccc;text-decoration:none}
+        .nav a:hover{background:#0f3460}
+        .main{margin-left:250px;padding:20px}
+        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+        .card{background:#16213e;padding:20px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.3)}
+        .card h3{color:#00d4ff;margin-bottom:10px}
+    </style>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Welcome to Talkora</h1>
-    <p>Talk to someone when you feel bored or lonely.</p>
-    <input type="text" placeholder="Enter Your Name" id="name">
-    <input type="email" placeholder="Enter Your Email" id="email">
-    <input type="number" placeholder="Enter Your Phone Number" id="phone">
-    <button onclick="login()">Login</button>
-  </div>
-  <script src="script.js"></script>
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <div class="nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="#">👤 Profile</a>
+            <a href="#">⚙️ Settings</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1 style="margin-bottom:30px">Welcome to Dashboard</h1>
+        <div class="cards">
+            <div class="card">
+                <h3>Total Users</h3>
+                <h2 style="color:#00d4ff">1,234</h2>
+            </div>
+            <div class="card">
+                <h3>Revenue</h3>
+                <h2 style="color:#ff6b9d">₹56,789</h2>
+            </div>
+            <div class="card">
+                <h3>Orders</h3>
+                <h2 style="color:#4ecdc4">890</h2>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
