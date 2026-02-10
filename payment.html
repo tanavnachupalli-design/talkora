@@ -1,50 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Payment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <title>Payment</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="payment-page">
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h2>Talkora</h2>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="booking.html">Booking</a></li>
-            <li><a href="payment.html" class="active">Payment</a></li>
-            <li><a href="confirmation.html">Confirmation</a></li>
-            <li><a href="thankyou.html">Thank You</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>Contact: talkoracall@gmail.com</p>
-        </div>
-    </nav>
-    <main class="content">
-        <h1>Payment Details</h1>
-        <form id="paymentForm">
-            <div class="payment-option">
-                <h3>Credit/Debit Card</h3>
-                <input type="text" placeholder="Card Number" required>
-                <input type="text" placeholder="Expiry Date" required>
-                <input type="text" placeholder="CVV" required>
-            </div>
-            <div class="payment-option">
-                <h3>UPI</h3>
-                <input type="text" placeholder="UPI ID" required>
-            </div>
-            <div class="payment-option">
-                <h3>Razorpay Mock</h3>
-                <p>Simulated Payment Gateway</p>
-            </div>
-            <button type="submit" class="cta-btn">Confirm Booking</button>
-        </form>
-        <div id="loading" class="loading-spinner" style="display: none;">Processing...</div>
-    </main>
-    <script src="script.js"></script>
+<body class="gradient-bg">
+  <div class="card">
+    <h2>Make Payment</h2>
+
+    <div class="qr-placeholder">
+      QR CODE HERE
+    </div>
+
+    <p>Pay to number:</p>
+    <h3>8125022563</h3>
+
+    <a href="confirmation.html">
+      <button class="done-btn">Done</button>
+    </a>
+  </div>
 </body>
 </html>
