@@ -1,3 +1,15 @@
-// Utility: Redirect function
-function redirectTo(page) {
-    window.location.href = page;
+// Lightweight interaction script for better performance
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Smooth button click effect
+  document.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+      button.classList.add("clicked");
+      setTimeout(() => {
+        button.classList.remove("clicked");
+      }, 120);
+    });
+  });
+
+});
