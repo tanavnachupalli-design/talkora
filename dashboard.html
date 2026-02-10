@@ -1,19 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Talkora - Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="dashboard-container">
-    <h1>Hello, Welcome to Your Dashboard</h1>
-    <div class="amounts">
-      <h2>Select Call Amount</h2>
-      <button onclick="book('99₹ - 15 mins')">99₹ - 15 mins</button>
-      <button onclick="book('149₹ - 30 mins')">149₹ - 30 mins</button>
-      <button onclick="book('199₹ - 45 mins')">199₹ - 45 mins</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+p { 
+    font-size: 1.2em; 
+    color: #555; 
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+a {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+}
+
+a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255,107,107,0.4);
+}
