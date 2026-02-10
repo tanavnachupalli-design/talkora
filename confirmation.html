@@ -1,38 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkora - Confirmation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <title>Confirmation</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="confirmation-page">
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h2>Talkora</h2>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="booking.html">Booking</a></li>
-            <li><a href="payment.html">Payment</a></li>
-            <li><a href="confirmation.html" class="active">Confirmation</a></li>
-            <li><a href="thankyou.html">Thank You</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>Contact: talkoracall@gmail.com</p>
-        </div>
-    </nav>
-    <main class="content">
-        <h1>Booking Confirmed!</h1>
-        <p>Email sent to talkoracall@gmail.com</p>
-        <div class="confirmation-details">
-            <p>Date: <span id="confirmDate"></span></p>
-            <p>Time: <span id="confirmTime"></span></p>
-        </div>
-        <button class="cta-btn" onclick="redirectTo('thankyou.html')">Proceed</button>
-    </main>
-    <script src="script.js"></script>
+<body class="gradient-bg">
+  <div class="card">
+    <h2>Payment Confirmation</h2>
+
+    <p>Upload payment screenshot</p>
+    <input type="file">
+
+    <p>Send screenshot and Google Meet link to:</p>
+    <h3>talkoracall@gmail.com</h3>
+
+    <a href="thank-you.html">
+      <button class="primary-btn">Submit</button>
+    </a>
+  </div>
 </body>
 </html>
