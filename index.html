@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Talkora</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #111;
-      color: white;
-      padding: 50px;
-    }
-    button {
-      padding: 12px 25px;
-      background: gold;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+  <title>Talkora - Login</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Welcome to Talkora</h1>
-  <p>Talk to someone when you feel bored or lonely.</p>
-  <button>Login with Phone</button>
+  <div class="login-container">
+    <h1>Welcome to Talkora</h1>
+    <p>Talk to someone when you feel bored or lonely.</p>
+    <input type="text" placeholder="Enter Your Name" id="name">
+    <input type="email" placeholder="Enter Your Email" id="email">
+    <input type="number" placeholder="Enter Your Phone Number" id="phone">
+    <button onclick="login()">Login</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
